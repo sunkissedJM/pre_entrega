@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- CSS de Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=El+Messiri&display=swap");
+            :root {
+                --bs-body-font-family: "El Messiri", sans-serif;
+                --bs-body-color: #eef;
+                --bs-body-bg: #10121c;
+            }
+            body {
+                background-image: url(sistema-solar-e1564771413564.jpeg);
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                background-size: 100% auto;
+            }
+        </style>
+        <title>Introducción al Desarrollo Front End con HTML, CSS y JavaScript</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+                        <h1 class="display-4 text-center py-2">El sistema Solar</h1>
+                        <p class="lead">
+                            El sistema solar1 es el sistema planetario que liga gravitacionalmente a un conjunto de objetos astronómicos que giran directa o indirectamente en una órbita alrededor de una única estrella conocida con el nombre
+                            de Sol.
+                        </p>
+                        <p>
+                            El sistema solar es también el hogar de varias regiones compuestas por objetos pequeños. El cinturón de asteroides, ubicado entre Marte y Júpiter, es similar a los planetas terrestres ya que está constituido
+                            principalmente por roca y metal. En este cinturón se encuentra el planeta enano Ceres. Más allá de la órbita de Neptuno están el cinturón de Kuiper, el disco disperso y la nube de Oort, que incluyen objetos
+                            transneptunianos formados por agua, amoníaco y metano principalmente. En este lugar existen cuatro planetas enanos: Haumea, Makemake, Eris y Plutón, el cual fue considerado el noveno planeta del sistema solar
+                            hasta 2006. Este tipo de cuerpos celestes ubicados más allá de la órbita de Neptuno son también llamados plutoides, los cuales junto a Ceres, poseen el suficiente tamaño para que se hayan redondeado por efectos
+                            de su gravedad, pero que se diferencian principalmente de los planetas porque no han vaciado su órbita de cuerpos vecinos.
+                        </p>
+                        <p>De la <a href="https://raw.githubusercontent.com/sunkissedJM/datos/main/planetasprincipales.csv" target="_blank" class="link-light">información acerca del sistema solar</a>, podemos obtener algunos datos:</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="container">
+            <div class="accordion mx-md-5 my-5 rounded-0" id="accordionExample">
+                <!--PLANETAS PRINCIPALES DEL SISTEMA SOLAR-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header bg-dark" id="headingOne">
+                        <button class="accordion-button rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Diámetro de los planetas</button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Los diámetros de los planetas principales del sistema solar son <span id="diametro"></span></p>
+                            <canvas id="diametrista" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Masa planetas-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Masa de los planetas</button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>La masa de los planetas del sistema solar son<span id="masa_mercurio"></span><span id="masa_venus"></span><span id="masa_tierra"></span><span id="masa_marte"></span><span id="masa_jupiter"></span><span id="masa_saturno"></span><span id="masa_urano"></span><span id="masa_neptuno"></span> </p>
+                            <canvas id="masita" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Clases-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Periodo orbital</button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Eran tres clases, en primera clase viajaban <span id="deprimera"></span> personas, en segunda viajaban <span id="desegunda"></span> y en tercera <span id="detercera"></span>.</p>
+                            <canvas id="clasista" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Otros-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Inclinación</button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Sobrevivieron <span id="losquevivieron"></span> y murieron <span id="losquemurieron"></span></p>
+                            <canvas id="sobreviven" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Otro más-->
+                <div class="accordion-item rounded-0">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Periodo de rotación</button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-black-50">
+                            <p>Sobrevivieron <span id="Hvivos"></span> hombres y <span id="Mvivos"></span> mujeres. Y murieron <span id="Hmuertos"></span> hombres y <span id="Mmuertos"></span> mujeres.</p>
+                            <canvas id="porsexo" width="100" height="100" class="m-5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!--Fin-->
+            </div>
+            <div class="row">
+                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
+                    <p>Los ocho planetas que componen el sistema solar son, de menor a mayor distancia respecto al Sol, los siguientes: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto small text-center">
+                        <p>Fuentes: <a href="https://es.wikipedia.org/wiki/Sistema_solar">El sistema solar.</a>,</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col"><p class="text-muted mt-5 text-center small">Bootstrap v5.1 y Charts.js</p></div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Biblioteca de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <!-- Biblioteca Chart.js -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+            integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            async function todo() {
+                //el fetch
+                const consulta = await fetch("https://raw.githubusercontent.com/sunkissedJM/datos/main/datos.json");
+                const data = await consulta.json();
+                //algunas variables para calcular
+
+                //algunas variables para calcular
+
+                var pequeno = 4878;
+                var pequeno2 = 6787;
+                var mediano = 12100;
+                var mediano2 = 12756;
+                var grande = 49538;
+                var grande2 = 51108;
+                var muygrande = 120536;
+                var muygrande2 = 142984;
+
+
+                //consultando en cada elemento del arreglo
+                data.forEach((d) => {
+                    if (d.Diámetroecuatorial == 4878) {
+                        pequeno = pequeno + 1;
+                    } else if (d == 6787) {
+                        pequeno2 = pequeno2 + 1;
+                    } else if (d == 12100){
+                        mediano = mediano +1;
+                    } else if (d == 12756) {
+                        mediano2 = mediano2 + 1;
+                    } else if (d == 49538 ) {
+                        grande = grande + 1;
+                    } else if (d == 51108) {
+                        grande2 = grande2 + 1;
+                    } else if (d == 120536) {
+                        muygrande = muygrande + 1;
+                    } else if (d == 142984) {
+                        muygrande2 = muygrande2 + 1;}
+                });
+
+                console.log(pequeno);
+                console.log(pequeno2);
+                console.log(mediano);
+                console.log(mediano2);
+                console.log(grande);
+                console.log(grande2);
+                console.log(muygrande);
+                console.log(muygrande2);
+
+                //Los demás datos deben ser propustos por ustedes.Cuando tengan datos suficientes, había que visualizarlos. Habrá que colocar una visualización dentro de cada división de clase .accordion-body
+
+                new Chart(document.getElementById("diametrista").getContext("2d"), {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Mercurio", "Marte", "Venus", "Tierra", "Urano", "Neptuno", "Jupiter", "Saturno"],
+                        datasets: [{ data: [pequeno, pequeno2, mediano, mediano2, grande, grande2, muygrande, muygrande2], label: "diametro", backgroundColor: ["#F06EC4", "#AB72F7", "#7396E0", "#495F8F", "#7356e3", "#AB22F7","#F36EC7", "#492F8F"] }],
+                    },
+                });
+                //no tocar
+            }
+            todo().catch((error) => console.error(error));
+        </script>
+    </body>
+</html>
